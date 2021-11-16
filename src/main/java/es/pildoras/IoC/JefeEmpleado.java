@@ -1,4 +1,4 @@
-package es.pildoras.IoC;
+package main.java.es.pildoras.IoC;
 
 public class JefeEmpleado implements EmpleadosI{
     
