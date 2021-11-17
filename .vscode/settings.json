@@ -3,6 +3,6 @@
         "."
     ],
     "java.project.referencedLibraries": [
-        "lib/**/*.jar",
+        "src/lib/*"
     ]
 }

@@ -4,6 +4,6 @@ public class JefeEmpleado implements EmpleadosI{
     
     public String getTareas()
     {
-        return "Jefe empleados retornando Tareas";
+        return "Soy Jefe y Gestiono las tareas del personal";
     }
 }

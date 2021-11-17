@@ -4,15 +4,18 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class UsoEmpleados {
     public static void main(String[] args) {
         //Antiguo
-        /*
+        // Java Code EE
         EmpleadosI jEmpleado = new JefeEmpleado();
         EmpleadosI sEmpleado = new SecretarioEmpleado();
         System.out.println(jEmpleado.getTareas());
         System.out.println(sEmpleado.getTareas());
-        */
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("aplicationContext.xml");
+        // End Java Code EE
+        
+        //Spring Code IoC
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("src/aplicationContext.xml");
         EmpleadosI empleadosI = context.getBean("tEmpleado",EmpleadosI.class);
         System.out.println(empleadosI.getTareas());
-        context.close();
+        //End Spring Code IoC
+
     }
 }

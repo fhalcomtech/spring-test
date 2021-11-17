@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch UsoEmpleados",
+            "request": "launch",
+            "mainClass": "src.main.java.es.pildoras.IoC.UsoEmpleados",
+            "projectName": "spring-test_eb8c8cc1"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

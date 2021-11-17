@@ -8,6 +8,6 @@
     http://www.springframework.org/schema/context 
     http://www.springframework.org/schema/context/spring-context-3.1.xsd
 ">
-<bean id="tEmpleado" class="src.main.java.es.pildoras.IoC.SecretarioEmpleado"></bean>
+<bean id="tEmpleado" class="src.main.java.es.pildoras.IoC.JefeEmpleado"></bean>
 
 </beans>
