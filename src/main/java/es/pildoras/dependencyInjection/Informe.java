@@ -4,7 +4,6 @@ public class Informe implements InformeI{
 
     @Override
     public String getInforme() {
-        // TODO Auto-generated method stub
         return "Presentando Informes";
     }
     

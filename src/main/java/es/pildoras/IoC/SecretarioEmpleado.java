@@ -4,10 +4,10 @@ import src.main.java.es.pildoras.dependencyInjection.InformeI;
 
 public class SecretarioEmpleado implements EmpleadosI
 {
-    private InformeI informe;
-
-    public SecretarioEmpleado(InformeI informeInj) 
-    {this.informe = informeInj;}
+    private InformeI informeI;
+    
+    public InformeI getInformeI(){return this.informeI;}
+    public void setInformeI(InformeI informeI){this.informeI = informeI;}
     
     public String getTareas()
     {
@@ -16,7 +16,6 @@ public class SecretarioEmpleado implements EmpleadosI
 
     @Override
     public String getInforme() {
-        // TODO Auto-generated method stub
-        return "Creando Informe de Impleado" + informe.getInforme();
+        return "Creando Informe de Secretario: " + informeI.getInforme();
     }
 }
