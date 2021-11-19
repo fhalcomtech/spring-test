@@ -8,6 +8,17 @@ public class JefeEmpleado implements EmpleadosI{
         public JefeEmpleado(InformeI informeInj) 
         {this.informe = informeInj;}
 
+
+        
+    private String empresa;
+    public String getEmpresa() {return empresa;}
+    public void setEmpresa(String empresa) {this.empresa = empresa;}
+    
+    private String email;
+    public String getEmail() {return email;}
+    public void setEmail(String email) {this.email = email;}
+    
+
     public String getTareas()
     {
         return "Soy Jefe y Gestiono las tareas del personal";

@@ -9,14 +9,30 @@
     http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
 <!-- Creating dependency to inject -->
+<context:property-placeholder location="classpath:/src/properties/empleados.properties"/>
 <bean id="InformeB" class="src.main.java.es.pildoras.dependencyInjection.Informe"></bean>
 <bean id="JEmpleado" class="src.main.java.es.pildoras.IoC.JefeEmpleado">
-    <!-- Injecting dependency into Employed by contructor-->
+    <!-- Start Injecting dependency into Employed by contructor-->
     <constructor-arg ref="InformeB"></constructor-arg>
+    <!-- End Injecting dependency into Employed by contructor-->
+
+    <!-- Start Injecting dependency into Employed by setter to field with default value from properties file-->
+    <property name="email" value="${email}"></property>
+    <property name="empresa" value="${empresa}"></property>
+    <!-- End Injecting dependency into Employed by setter to field witd default value  from properties file-->
+
 </bean>
 <bean id="SEmpleado" class="src.main.java.es.pildoras.IoC.SecretarioEmpleado">
-    <!-- Injecting dependency into Employed by setter-->
+    <!-- Start Injecting dependency into Employed by setter-->
     <property name="informeI" ref="InformeB"></property>
+    <!-- End Injecting dependency into Employed by setter-->
+
+    <!-- Start Injecting dependency into Employed by setter to field with default value-->
+    <property name="email" value="fhalcom@fhalcom.com"></property>
+    <property name="empresa" value="Fhalcom S.A."></property>
+    <!-- End Injecting dependency into Employed by setter to field witd default value  -->
+
+
 </bean>
 
 

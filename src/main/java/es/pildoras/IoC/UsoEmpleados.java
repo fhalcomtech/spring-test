@@ -18,15 +18,29 @@ public class UsoEmpleados {
         
         //Spring Code IoC
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("src/aplicationContext.xml");
-        EmpleadosI empleadosI = context.getBean("JEmpleado",EmpleadosI.class);
+        JefeEmpleado empleadosI = context.getBean("JEmpleado",JefeEmpleado.class);
         System.out.println(empleadosI.getTareas());
         System.out.println(empleadosI.getInforme());
         //End Spring Code IoC
-
-        //Test Injection With Dependeci Injection by setter
-        EmpleadosI sEmpleadosI = context.getBean("SEmpleado",EmpleadosI.class);
+        
+        //Start dependency injection test to field with default value from config file
+        System.out.println(empleadosI.getEmail());
+        System.out.println(empleadosI.getEmpresa());
+        //Start dependency injection test to field with default value from config file
+        
+        //Start Test Injection With Dependeci Injection by setter
+        SecretarioEmpleado sEmpleadosI = context.getBean("SEmpleado", SecretarioEmpleado.class);
         System.out.println(sEmpleadosI.getTareas());
         System.out.println(sEmpleadosI.getInforme());
+        //End Test Injection With Dependeci Injection by setter
+        
+        //Start dependency injection test to field with default value
+        System.out.println(sEmpleadosI.getEmail());
+        System.out.println(sEmpleadosI.getEmpresa());
+        //End dependency injection test to field with default value
+
+        
+        
 
         context.close();
 
