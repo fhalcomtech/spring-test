@@ -39,9 +39,6 @@ public class UsoEmpleados {
         System.out.println(sEmpleadosI.getEmpresa());
         //End dependency injection test to field with default value
 
-        
-        
-
         context.close();
 
     }
