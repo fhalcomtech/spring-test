@@ -9,6 +9,13 @@
     http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
 <!-- Creating dependency to inject -->
-<bean id="ConsoleD" class="src.main.java.com.scope.console.ConsoleDesk" scope="singleton" ></bean>
-<bean id="ConsoleP" class="src.main.java.com.scope.console.ConsolePortatil" scope="prototype"></bean>
+<bean id="ConsoleD" class="src.main.java.com.lifecycle.console.ConsoleDesk" scope="singleton"
+init-method="init"
+destroy-method="destroy"
+></bean>
+
+<bean id="ConsoleP" class="src.main.java.com.lifecycle.console.ConsolePortatil" scope="prototype"
+init-method="init"
+destroy-method="destroy"
+></bean>
 </beans>
