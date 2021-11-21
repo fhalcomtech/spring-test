@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Launch ConsoleMain",
             "request": "launch",
+            "mainClass": "src.main.java.com.anotations.console.ConsoleMain",
+            "projectName": "Spring_170ca489"
+        },
+        {
+            "type": "java",
+            "name": "Launch ConsoleMain",
+            "request": "launch",
             "mainClass": "src.main.java.com.lifecycle.console.ConsoleMain",
             "projectName": "spring-test_eb8c8cc1"
         },

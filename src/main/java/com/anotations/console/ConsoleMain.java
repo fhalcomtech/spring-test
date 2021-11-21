@@ -1,10 +1,10 @@
-package src.main.java.com.lifecycle.console;
+package src.main.java.com.anotations.console;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class ConsoleMain {
     public static void main(String args[]) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("src/main/java/com/lifecycle/contextScope.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("src/main/java/com/anotations/contextAnotations.xml");
         // Singleton test
         ConsoleA consoleDesk = context.getBean("ConsoleD",ConsoleA.class);
         consoleDesk.setGame("Mario");
@@ -30,7 +30,7 @@ public class ConsoleMain {
         ConsoleA consolePortable2 = context.getBean("ConsoleP",ConsoleA.class);
         consolePortable2.setGame("Crash");
         consolePortable2.play();
-
+        consolePortable2.getRealGame().presentacion();
 
         // Comprare Prototype Beans have diferent memory address
         System.out.println(consolePortable + " == " + consolePortable2 + " ===> " + (consolePortable == consolePortable2) );
