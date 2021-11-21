@@ -1,7 +1,6 @@
 package src.main.java.com.anotations.console;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 public class ConsoleMain {
     public static void main(String args[]) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("src/main/java/com/anotations/contextAnotations.xml");

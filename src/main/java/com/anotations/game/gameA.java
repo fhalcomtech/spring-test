@@ -1,5 +1,8 @@
 package src.main.java.com.anotations.game;
 
+import javax.annotation.PostConstruct;
+
+
 public abstract class gameA implements gameI
 {
     protected String tipoJuego;
@@ -17,4 +20,8 @@ public void setTipoJuego(String tipoJuego) {
     public void setNombreJuego(String nombreJuego) {
         this.nombreJuego = nombreJuego;
     }
+
+
+    @PostConstruct
+    protected abstract void getRandomGame();
 }
