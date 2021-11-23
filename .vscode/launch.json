@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch JavaConfigMain",
+            "request": "launch",
+            "mainClass": "src.main.java.com.javaconfig.JavaConfigMain",
+            "projectName": "Spring_170ca489"
+        },
+        {
+            "type": "java",
             "name": "Launch ConsoleMain",
             "request": "launch",
             "mainClass": "src.main.java.com.anotations.console.ConsoleMain",
