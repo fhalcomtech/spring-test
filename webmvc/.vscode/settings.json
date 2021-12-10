@@ -71,8 +71,7 @@
         "web\\WEB-INF\\lib\\spring-websocket-5.2.9.RELEASE.jar",
         "web\\WEB-INF\\lib\\spring-websocket-5.2.9.RELEASE-javadoc.jar",
         "web\\WEB-INF\\lib\\spring-websocket-5.2.9.RELEASE-sources.jar",
-        "web/WEB-INF/lib/javax.servlet-api-4.0.1.jar",
-        "web/WEB-INF/lib/jakarta.servlet-api-5.0.0.jar"
+        "web/WEB-INF/lib/**/*.jar"
     ]
 
 }

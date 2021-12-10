@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
     <title>Datos de estudiante procesados</title>
 </head>
 <body>
-    <p> Buenos dias ${userinfo.name} </p>
-    <p>Tu edad es: ${userinfo.edad}</p>
-    <p>Y tu email es ${userinfo.email}</p>
+    <div class="container">
+        <h1 class="h1"> Buenos dias ${userinfo.name} </h1>
+        <p class="container">
+            Tu edad es: ${userinfo.edad}
+            <br/>Y tu email es ${userinfo.email}
+        </p>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </div>
+
 </body>
 </html>
