@@ -8,10 +8,9 @@
 </head>
 <body>
     <h1>Ingrese Ususrios</h1>
-    <form action="userresponse">
+    <form action="usrresp">
         <label for="username">Nombres</label>
         <input type="text" name="username" id="username" placeholder="Nombre Usuario"/>
-
         <button type="submit">Enviar</button>
     </form>
 </body>
