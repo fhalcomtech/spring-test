@@ -1,18 +1,20 @@
 package com.fhalcom.Model;
 
 import java.util.List;
+import javax.validation.constraints.*;
 
 import org.springframework.stereotype.Component;
 
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+
 
 
 @Component("Student")
 public class Student {
+
     @NotNull
     @Size(min=2, message="Minimo 2 caracteres")
     private String name;
+
     private Integer edad;
     private String email;
     private List<Signature> signatures;

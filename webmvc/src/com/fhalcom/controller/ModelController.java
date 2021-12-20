@@ -2,16 +2,19 @@ package com.fhalcom.controller;
 
 import java.util.ArrayList;
 
+import javax.validation.Valid;
+
 import com.fhalcom.Model.Signature;
 import com.fhalcom.Model.Student;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import jakarta.validation.Valid;
+
 
 
 @Controller
@@ -31,10 +34,12 @@ public class ModelController {
     }
 
     @RequestMapping(path="alumpro")
-    public String processStudent(@Valid @ModelAttribute("userinfo") Student stud, Model model)
+    public String processStudent(@Valid @ModelAttribute("userinfo") Student stud, BindingResult bindingResult)
     {
+        
         // model.addAttribute("userinfo",stud);
-        return "stud/studpro";
+        if(bindingResult.hasErrors()) return "stud/stud";
+        else return "stud/studpro";
     }
 
 }
