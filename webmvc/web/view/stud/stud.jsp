@@ -14,7 +14,10 @@
 <body>
     <h1 class="h1">Ingrese la informaci&oacute;n del estudiante</h1>
         <form:form action="alumpro" modelAttribute="userinfo" class="container">
-            Name: <form:input path="name" class="form-text"/><br/>
+            Name: <form:input path="name" class="form-text"/>
+            <form:errors path="name"/>
+            <br/>
+            
             Edad: <form:input path="edad" class="form-text"/><br/>
             Email: <form:input path="email" class="form-text"/><br/>
             <form:select path="favorite" class="form-select">

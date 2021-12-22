@@ -36,7 +36,6 @@ public class ModelController {
     @RequestMapping(path="alumpro")
     public String processStudent(@Valid @ModelAttribute("userinfo") Student stud, BindingResult bindingResult)
     {
-        
         // model.addAttribute("userinfo",stud);
         if(bindingResult.hasErrors()) return "stud/stud";
         else return "stud/studpro";

@@ -15,6 +15,8 @@ public class Student {
     @Size(min=2, message="Minimo 2 caracteres")
     private String name;
 
+    @Min(value=10, message="La edada minima es 10")
+    @Max(value=200, message="La edada maxima es 200")
     private Integer edad;
     private String email;
     private List<Signature> signatures;
