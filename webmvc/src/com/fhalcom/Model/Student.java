@@ -20,7 +20,11 @@ public class Student {
     @Max(value=200, message="La edad maxima es 200")
     private Integer edad;
 
+    @NotNull(message = "Ingrese un email valido")
+    @Size(min=3, message="Minimo 2 caracteres")
+    @Email(message = "Ingrese un email correcto")
     private String email;
+
     private List<Signature> signatures;
     private String favorite;
     private List<String> hobbies;

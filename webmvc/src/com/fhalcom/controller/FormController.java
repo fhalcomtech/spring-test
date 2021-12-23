@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequestMapping(path = "form")
 public class FormController {
+
     @RequestMapping(path = "userform")
     public String userFormControl(){
         return "user/userform";
