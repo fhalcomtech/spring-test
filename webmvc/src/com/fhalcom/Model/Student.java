@@ -11,13 +11,15 @@ import org.springframework.stereotype.Component;
 @Component("Student")
 public class Student {
 
-    @NotNull
+    @NotNull(message="Este campo no puede esta vacio")
     @Size(min=2, message="Minimo 2 caracteres")
     private String name;
 
-    @Min(value=10, message="La edada minima es 10")
-    @Max(value=200, message="La edada maxima es 200")
+    @NotNull(message="Esta campo no puede estar vacio")
+    @Min(value=10, message="La edad minima es 10")
+    @Max(value=200, message="La edad maxima es 200")
     private Integer edad;
+
     private String email;
     private List<Signature> signatures;
     private String favorite;

@@ -13,12 +13,15 @@
 </head>
 <body>
     <h1 class="h1">Ingrese la informaci&oacute;n del estudiante</h1>
-        <form:form action="alumpro" modelAttribute="userinfo" class="container">
+        <form:form action="alumpro" modelAttribute="userinfo" class="form">
             Name: <form:input path="name" class="form-text"/>
             <form:errors path="name"/>
             <br/>
             
-            Edad: <form:input path="edad" class="form-text"/><br/>
+            Edad: <form:input path="edad" class="form-text"/>
+            <form:errors path="edad"/>
+            <br/>
+
             Email: <form:input path="email" class="form-text"/><br/>
             <form:select path="favorite" class="form-select">
                 <form:options items="${userinfo.signatures}" itemValue="code" itemLabel="name"/>
