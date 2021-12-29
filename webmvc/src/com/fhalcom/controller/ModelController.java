@@ -40,12 +40,12 @@ public class ModelController {
     {
         student.setSignatures(Signature.getSignatures());
         student.setHobbies(new ArrayList<String>());
-        model.addAttribute("userinfo", student);
+        model.addAttribute("student", student);
         return "stud/stud";
     }
 
     @RequestMapping(path="alumpro")
-    public String processStudent(@Valid @ModelAttribute("userinfo") Student stud, BindingResult bindingResult, Model model)
+    public String processStudent(@Valid @ModelAttribute("student") Student stud, BindingResult bindingResult, Model model)
     {
         // model.addAttribute("userinfo",stud);
         if(bindingResult.hasErrors()) return "stud/stud";

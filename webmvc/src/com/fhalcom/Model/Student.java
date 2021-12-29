@@ -3,12 +3,14 @@ package com.fhalcom.Model;
 import java.util.List;
 import javax.validation.constraints.*;
 
+import com.fhalcom.annotation.validation.PostalCodeValidationI;
+
 import org.springframework.stereotype.Component;
 
 
 
 
-@Component("Student")
+@Component("student")
 public class Student {
 
     @NotNull(message="Este campo no puede esta vacio")
@@ -72,5 +74,14 @@ public class Student {
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
 
+    @PostalCodeValidationI(message = "Este mensaje no es por defecto")
+    private String postalCode;
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
 
 }

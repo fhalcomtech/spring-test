@@ -15,7 +15,7 @@
     <div class="container">
 
         <h1 class="h1">Ingrese la informaci&oacute;n del estudiante</h1>
-        <form:form action="alumpro" modelAttribute="userinfo">
+        <form:form action="alumpro" modelAttribute="student">
             <div class="mb-3">    
                 <label for="name-form" class="form-label">Name</label>
                 <form:input id="name-form" path="name" class="form-control form-control-sm"/>
@@ -35,9 +35,15 @@
             </div>
 
             <div class="mb-3">
+                <label for="postalcode-form" class="form-label">Postal Code</label>
+                <form:input path="postalCode" class="form-control form-control-sm" id="postalcode-form"/>
+                <form:errors path="postalCode" class="text-danger"/>
+            </div>
+
+            <div class="mb-3">
                 <label for="favorite-form" class="form-label">Favorite Signature</label>
                 <form:select path="favorite" class="form-select form-control-sm" id="favorite-form" >
-                    <form:options items="${userinfo.signatures}" itemValue="code" itemLabel="name"/>
+                    <form:options items="${student.signatures}" itemValue="code" itemLabel="name"/>
                 </form:select>
             </div>
             
