@@ -3,7 +3,7 @@ package com.fhalcom.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "client", schema="test")
+@Table(name = "client")
 public class Client {
 
     public Client(){};
@@ -16,8 +16,9 @@ public class Client {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="id")
-    private int id;
+    private Integer id;
 
     @Column(name="name")
     private String name;
@@ -29,8 +30,8 @@ public class Client {
     private String address;
 
 
-    public int getId() {return id;}
-    public void setId(int id) {this.id = id;}
+    public Integer getId() {return id;}
+    public void setId(Integer id) {this.id = id;}
 
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
