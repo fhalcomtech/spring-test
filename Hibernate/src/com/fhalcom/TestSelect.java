@@ -27,7 +27,27 @@ public class TestSelect {
         session.getTransaction().commit();
         printClients(clients);
 
+        //Actualizando registro
+        session.beginTransaction();
+        session.createQuery("update Client set name = 'Fhalcom' where id = 1").executeUpdate();
+        session.getTransaction().commit();
 
+        //Buscando registro actualizado
+        session.beginTransaction();
+        clients = session.createQuery("from Client c where c.id in(3)").getResultList();
+        session.getTransaction().commit();
+        printClients(clients);
+
+        //Eliminando registro
+        session.beginTransaction();
+        session.createQuery("delete Client where id = 3").executeUpdate();
+        session.getTransaction().commit();
+
+        //Buscando registro actualizado
+        session.beginTransaction();
+        clients = session.createQuery("from Client c").getResultList();
+        session.getTransaction().commit();
+        printClients(clients);
 
         session.close();
     }
@@ -38,6 +58,5 @@ public class TestSelect {
         for (Client client : clients) {
             System.out.println(client.toString() + "\n");
         }
-
     }
 }
