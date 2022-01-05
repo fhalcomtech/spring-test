@@ -40,6 +40,11 @@ public class ClientDetail {
 
     public String getComment() {return comment;}
     public void setComment(String comment) {this.comment = comment;}
+
+    @OneToOne(mappedBy = "clientDetail", cascade= CascadeType.ALL)
+    Client client;
+    public Client getClient() {return client;}
+    public void setClient(Client client) {this.client = client;}
     
     public String toString() {
         return "{"

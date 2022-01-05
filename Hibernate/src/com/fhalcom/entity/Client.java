@@ -27,32 +27,28 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="id")
     private Long id;
-
-    @Column(name="name")
-    private String name;
-
-    @Column(name="lastname")
-    private String lastname;
-
-    @Column(name="address")
-    private String address;
-
-    @OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name="id")
-    private ClientDetail clientDetail;
-
     public Long getId() {return id;}
     public void setId(Long id) {this.id = id;}
-
+    
+    @Column(name="name")
+    private String name;
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
 
+    @Column(name="lastname")
+    private String lastname;
     public String getLastname() {return lastname;}
     public void setLastname(String lastname) {this.lastname = lastname;}
-
+    
+    @Column(name="address")
+    private String address;
     public String getAddress() {return address;}
     public void setAddress(String address) {this.address = address;}
 
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name="client_detail_id")
+    private ClientDetail clientDetail;
+    
     public void setClientDetail(ClientDetail clientDetail) {this.clientDetail = clientDetail;}
     public ClientDetail getClientDetail() {return clientDetail;}
 
