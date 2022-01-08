@@ -1,4 +1,4 @@
-package com.fhalcom;
+package com.fhalcom.test;
 
 import java.util.List;
 

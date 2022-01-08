@@ -1,4 +1,4 @@
-package com.fhalcom;
+package com.fhalcom.test;
 
 import com.fhalcom.entity.Client;
 

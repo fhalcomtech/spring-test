@@ -1,5 +1,8 @@
 package com.fhalcom.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -52,6 +55,15 @@ public class Client {
     public void setClientDetail(ClientDetail clientDetail) {this.clientDetail = clientDetail;}
     public ClientDetail getClientDetail() {return clientDetail;}
 
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL/*{CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH}*/)
+    List<Order> pedidos;
+
+    public void addOrder(Order o){
+        if(this.pedidos == null) this.pedidos = new ArrayList<Order>();
+        this.pedidos.add(o);
+        o.setClient(this);
+    }
+
     @Override
     public String toString() {
         return "{"
@@ -62,5 +74,7 @@ public class Client {
             + "\"client_detail\"  :\""+this.clientDetail.toString() +   "\""
         +"}";
     }
+
+
 
 }
