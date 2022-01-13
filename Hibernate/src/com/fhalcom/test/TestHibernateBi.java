@@ -35,7 +35,7 @@ try{
     cd.setComment("Comentario" + (new Random()).nextLong());
     cd.setPhone("09239705001");
     cd.setWeb("fidel.test."+(new Random()).nextLong()+".com");
-    //cd.setClient(c);
+    cd.setClient(c);
     c.setClientDetail(cd);
     
     session.beginTransaction();

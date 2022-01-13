@@ -55,12 +55,12 @@ public class Client {
     public void setClientDetail(ClientDetail clientDetail) {this.clientDetail = clientDetail;}
     public ClientDetail getClientDetail() {return clientDetail;}
 
-    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL/*{CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH}*/)
-    List<Order> pedidos;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "client", cascade = CascadeType.ALL/*{CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH}*/)
+    List<Order> orders;
 
     public void addOrder(Order o){
-        if(this.pedidos == null) this.pedidos = new ArrayList<Order>();
-        this.pedidos.add(o);
+        if(this.orders == null) this.orders = new ArrayList<Order>();
+        this.orders.add(o);
         o.setClient(this);
     }
 
@@ -71,8 +71,20 @@ public class Client {
             + "\"name\"     :\""+this.name +     "\","
             + "\"lastname\" :\""+this.lastname + "\","
             + "\"address\"  :\""+this.address +   "\""
-            + "\"client_detail\"  :\""+this.clientDetail.toString() +   "\""
+            + "\"client_detail\"  :\""+((this.clientDetail!=null)?this.clientDetail.toString():"" )+   "\""
         +"}";
+    }
+
+    public void print()
+    {
+        System.out.println(toString());
+        if(orders!=null)
+        {
+            System.out.println("Printing orders\n");
+            for(Order o: this.orders){System.out.println(o.toString()+"\n");}
+        }
+        else System.err.println("There are not orders");
+
     }
 
 

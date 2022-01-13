@@ -1,6 +1,6 @@
 package com.fhalcom.test;
 
-import java.util.Date;
+
 import java.util.GregorianCalendar;
 import java.util.Random;
 
@@ -34,7 +34,7 @@ public class OneToMany {
 
         Order o1 = new Order();
         o1.setDateCreate((new GregorianCalendar()));
-        o1.setPayType("contado");
+        o1.setPayType("Contado");
         c.addOrder(o1);
 
         Order o2 = new Order();
@@ -46,6 +46,9 @@ public class OneToMany {
         s.save(c);
         s.getTransaction().commit();
         s.close();
+
+
+        
         
     }
 }

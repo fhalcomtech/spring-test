@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="pedido", schema="test_rel")
+@Table(name="orders", schema="test_rel")
 public class Order {
 
     public Order(){};
@@ -18,23 +18,23 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="ID")
+    @Column(name="id")
     Long id;
     public Long getId() {return id;}
     public void setId(Long id) {this.id = id;}
     
-    @Column(name="DATE_CREATE")
+    @Column(name="date_create")
     GregorianCalendar dateCreate;
     public GregorianCalendar getDateCreate() {return dateCreate;}
     public void setDateCreate(GregorianCalendar dateCreate) {this.dateCreate = dateCreate;}
     
-    @Column(name="PAY_TYPE")
+    @Column(name="pay_type")
     String payType;
     public String getPayType() {return payType;}
     public void setPayType(String payType) {this.payType = payType;}
 
-    @ManyToOne(cascade = CascadeType.ALL/*{CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH}*/)
-    @JoinColumn(name="CLIENT_ID", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL/*{CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH}*/)
+    @JoinColumn(name="client_id", referencedColumnName = "id")
     Client client;
     public Client getClient() {return client;}
     public void setClient(Client client) {this.client = client;}
