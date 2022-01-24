@@ -4,7 +4,8 @@ import java.util.List;
 
 import com.fhalcom.entity.Client;
 
-public interface ClientDaoI {
+public interface ClientDaoI 
+{
     public List<Client> getClients();
 
     public void save(Client client);

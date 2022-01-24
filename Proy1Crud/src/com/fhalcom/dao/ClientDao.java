@@ -28,15 +28,14 @@ public class ClientDao implements ClientDaoI {
     @Override
     @Transactional
     public void save(Client client) {
-        
         Session s = this.sf.getCurrentSession();
         s.saveOrUpdate("Client", client);
+        
     }
 
     @Override
     @Transactional
     public Client getById(Long id) {
-        
         Session s = this.sf.getCurrentSession();
         Client c = s.get(Client.class, id);
         return c;

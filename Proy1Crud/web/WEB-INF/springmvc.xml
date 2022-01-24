@@ -52,7 +52,7 @@
 		<property name="hibernateProperties">
 		   <props>
 		      <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
-		      <prop key="hibernate.show_sql">true</prop>
+		      <prop key="hibernate.show_sql">false</prop>
 		   </props>
 		</property>
    </bean>	  
@@ -63,7 +63,6 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
-    
     <!-- Habilitar configuración de transacciones basadas en anotaciones -->
 	<tx:annotation-driven transaction-manager="HibernateTransactionManager" />
 

@@ -22,7 +22,7 @@ public class ClientController
 
      @RequestMapping(path = "/list")
      public String clientList(Model model) {
-         List<Client> clients = cdao.getClients();
+        List<Client> clients = cdao.getClients();
          model.addAttribute("clients", clients);
          return "client-list";
      }
@@ -38,7 +38,14 @@ public class ClientController
      @RequestMapping(path = "/saveclient")
      public String saveClient(@ModelAttribute("client") Client client)
      {
-        cdao.save(client);
+        try 
+        {
+            cdao.save(client);
+        } 
+        catch (Exception e) 
+        {
+            System.err.println("=====> Fracasando <=====");
+        }
         return "redirect:/client/list";
      }
 
