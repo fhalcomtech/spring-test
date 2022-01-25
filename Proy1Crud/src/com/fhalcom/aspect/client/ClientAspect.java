@@ -6,6 +6,7 @@ import java.util.List;
 import com.fhalcom.entity.Client;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
@@ -13,7 +14,6 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
-import org.joda.time.Minutes;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -63,17 +63,18 @@ public class ClientAspect {
         Client client = (Client) arg[0];
         System.out.println(" ============> Cliente: " + client.getName() +" - "+ client.getLastname());
     }
-/*
+
+    
     @Around("aspectClientUpdate()")
-    public void aspectClientUpdateArround(JoinPoint jpoint)
+    public Object aspectClientUpdateArround(ProceedingJoinPoint pjpoint) throws Throwable
     {
         //Funciona despues de ejecutar la funcion donde JoinPoint son los datos que recibe la funcion
         GregorianCalendar date = new GregorianCalendar();
-        System.err.println(" ============> Ejecutando around <============ " + date.getTimeInMillis());
-        Object[] arg = jpoint.getArgs();
-        Client client = (Client) arg[0];
+        System.err.println(" ============> Ejecutando Around Inicio <============ " + date.getTimeInMillis());
+        Object result = pjpoint.proceed();
+        Client client = (Client) pjpoint.getArgs()[0];
         System.out.println(" ============> Cliente: " + client.getName() +" - "+ client.getLastname());
+        System.err.println(" ============> Ejecutando Around Fin <============ " + date.getTimeInMillis());
+        return result;
     }
-*/
-
 }
